@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Creditos</name>
+    <events>
+        <variable constant="0" name="Roludo" static="0" type="number">0</variable>
+        <variable constant="0" name="Forca" static="0" type="number">-180</variable>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" type="Particles">
+                    <param id="0" name="Pin to">BruxaBoss</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="Particles3">
+                    <param id="0" name="Pin to">BruxaBoss</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-23" name="Move at angle" type="BruxaBoss">
+                    <param id="0" name="Angle">forca</param>
+                    <param id="1" name="Distance">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" inverted="1" name="Is overlapping another object" type="BruxaBoss">
+                    <param id="0" name="Object">Peido</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Set opacity" type="Particles">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+                <action id="6" name="Set opacity" type="Particles3">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="BruxaBoss">
+                    <param id="0" name="Object">Peido</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Set opacity" type="Particles">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="6" name="Set opacity" type="Particles3">
+                    <param id="0" name="Opacity">90</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="BruxaBoss">
+                    <param id="0" name="Object">ViraBruxa</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">Forca</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="7" name="Set mirrored" type="BruxaBoss">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-10" name="Add to" type="System">
+                    <param id="0" name="Variable">Roludo</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="BruxaBoss">
+                    <param id="0" name="Object">VIRABRUXA2</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">Roludo</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">Forca</param>
+                    <param id="1" name="Value">-180</param>
+                </action>
+                <action id="7" name="Set mirrored" type="BruxaBoss">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-10" name="Add to" type="System">
+                    <param id="0" name="Variable">Roludo</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="BruxaBoss">
+                    <param id="0" name="Object">Peido</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">Roludo</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Thiago</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">381</param>
+                    <param id="3" name="Y">421</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="BruxaBoss">
+                    <param id="0" name="Object">Peido</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">Roludo</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Rafael</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">381</param>
+                    <param id="3" name="Y">421</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="BruxaBoss">
+                    <param id="0" name="Object">Peido</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">Roludo</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Gomes</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">381</param>
+                    <param id="3" name="Y">421</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="BruxaBoss">
+                    <param id="0" name="Object">Peido</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">Roludo</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Bolsoni</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">381</param>
+                    <param id="3" name="Y">421</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="BruxaBoss">
+                    <param id="0" name="Object">Peido</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">Roludo</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Tanks</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">381</param>
+                    <param id="3" name="Y">421</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="BruxaBoss">
+                    <param id="0" name="Object">Peido</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">Roludo</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">GameOverr</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">381</param>
+                    <param id="3" name="Y">421</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

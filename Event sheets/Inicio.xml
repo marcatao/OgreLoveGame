@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Inicio</name>
+    <events>
+        <variable constant="0" name="Start" static="0" type="number">0</variable>
+        <event-block>
+            <conditions>
+                <condition id="-25" name="On loading finished" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">creditos_finais</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-20</param>
+                    <param id="1" name="Tag (optional)">&quot;INICIO&quot;</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" type="Sprite3" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action id="-9" name="Destroy" type="Sprite3" />
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">Start</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="On any key pressed" type="Keyboard" />
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">Start</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" type="PressStart" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">3.5</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">BalãoNormal</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">80</param>
+                    <param id="3" name="Y">356</param>
+                </action>
+                <action id="7" name="Set mirrored" type="BalãoNormal">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Conversa</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">BalãoNormal.ImagePointX(1)</param>
+                    <param id="3" name="Y">BalãoNormal.ImagePointY(1)</param>
+                </action>
+                <action id="0" name="Set text" type="Conversa">
+                    <param id="0" name="Text">&quot;Look that castle !&quot;</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-9" name="Destroy" type="BalãoNormal" />
+                <action id="-9" name="Destroy" type="Conversa" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">BalãoNormal</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">139</param>
+                    <param id="3" name="Y">367</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Conversa</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">BalãoNormal.ImagePointX(2)</param>
+                    <param id="3" name="Y">BalãoNormal.ImagePointY(2)</param>
+                </action>
+                <action id="0" name="Set text" type="Conversa">
+                    <param id="0" name="Text">&quot;What about it&quot;</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-9" name="Destroy" type="BalãoNormal" />
+                <action id="-9" name="Destroy" type="Conversa" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">BalãoNormal</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">80</param>
+                    <param id="3" name="Y">356</param>
+                </action>
+                <action id="7" name="Set mirrored" type="BalãoNormal">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Conversa</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">BalãoNormal.ImagePointX(1)</param>
+                    <param id="3" name="Y">BalãoNormal.ImagePointY(1)</param>
+                </action>
+                <action id="0" name="Set text" type="Conversa">
+                    <param id="0" name="Text">&quot;It is said thats a witch lives there.&quot;</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-9" name="Destroy" type="BalãoNormal" />
+                <action id="-9" name="Destroy" type="Conversa" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">BalãoNormal</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">80</param>
+                    <param id="3" name="Y">356</param>
+                </action>
+                <action id="7" name="Set mirrored" type="BalãoNormal">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Conversa</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">BalãoNormal.ImagePointX(1)</param>
+                    <param id="3" name="Y">BalãoNormal.ImagePointY(1)</param>
+                </action>
+                <action id="0" name="Set text" type="Conversa">
+                    <param id="0" name="Text">&quot;Im scared !&quot;</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-9" name="Destroy" type="BalãoNormal" />
+                <action id="-9" name="Destroy" type="Conversa" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">BalãoNormal</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">139</param>
+                    <param id="3" name="Y">367</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Conversa</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">BalãoNormal.ImagePointX(2)</param>
+                    <param id="3" name="Y">BalãoNormal.ImagePointY(2)</param>
+                </action>
+                <action id="0" name="Set text" type="Conversa">
+                    <param id="0" name="Text">&quot;Be quiet, i&apos;m here&quot;</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-9" name="Destroy" type="BalãoNormal" />
+                <action id="-9" name="Destroy" type="Conversa" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">CoracaoIntro</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">85</param>
+                    <param id="3" name="Y">377</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-3" name="Set position" type="CoracaoIntro">
+                    <param id="0" name="X">coracaointro.X </param>
+                    <param id="1" name="Y">coracaointro.y -5</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-3" name="Set position" type="CoracaoIntro">
+                    <param id="0" name="X">coracaointro.X </param>
+                    <param id="1" name="Y">coracaointro.y - 5</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-3" name="Set position" type="CoracaoIntro">
+                    <param id="0" name="X">coracaointro.X </param>
+                    <param id="1" name="Y">coracaointro.y - 5</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-3" name="Set position" type="CoracaoIntro">
+                    <param id="0" name="X">coracaointro.X </param>
+                    <param id="1" name="Y">coracaointro.y - 5</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-3" name="Set position" type="CoracaoIntro">
+                    <param id="0" name="X">coracaointro.X </param>
+                    <param id="1" name="Y">coracaointro.y - 5</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-9" name="Destroy" type="CoracaoIntro" />
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">bruxa</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">542</param>
+                    <param id="3" name="Y">401</param>
+                </action>
+                <action id="-3" name="Set position" type="bruxa">
+                    <param id="0" name="X">504</param>
+                    <param id="1" name="Y">376</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-3" name="Set position" type="bruxa">
+                    <param id="0" name="X">458</param>
+                    <param id="1" name="Y">348</param>
+                </action>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">bruxa</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-25</param>
+                    <param id="1" name="Tag (optional)">&quot;risadabruxa&quot;</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-3" name="Set position" type="bruxa">
+                    <param id="0" name="X">420</param>
+                    <param id="1" name="Y">330</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-3" name="Set position" type="bruxa">
+                    <param id="0" name="X">362</param>
+                    <param id="1" name="Y">282</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Esconde</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">121.429</param>
+                    <param id="3" name="Y">381</param>
+                </action>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">TransformaNovo</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Flasj</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">400</param>
+                    <param id="3" name="Y">300</param>
+                </action>
+                <action id="-24" name="Move to top" type="Flasj" />
+                <action id="-7" name="Set size" type="Flasj">
+                    <param id="0" name="Width">800</param>
+                    <param id="1" name="Height">600</param>
+                </action>
+                <action id="-9" name="Destroy" type="bruxa" />
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">BruxaComPrincipe</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">362</param>
+                    <param id="3" name="Y">282</param>
+                </action>
+                <action id="7" name="Set mirrored" type="BruxaComPrincipe">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-24" name="Move to top" type="Flasj" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-16" name="Set opacity" type="Flasj">
+                    <param id="0" name="Opacity">35</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-3" name="Set position" type="BruxaComPrincipe">
+                    <param id="0" name="X">362</param>
+                    <param id="1" name="Y">282</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">BalaoGrito</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">BruxaComPrincipe.ImagePointX(0)</param>
+                    <param id="3" name="Y">BruxaComPrincipe.ImagePointY(0)</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Conversa</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">BalaoGrito.ImagePointX(1)</param>
+                    <param id="3" name="Y">BalaoGrito.ImagePointY(1)</param>
+                </action>
+                <action id="0" name="Set text" type="Conversa">
+                    <param id="0" name="Text">&quot;Princess !&quot;</param>
+                </action>
+                <action id="-16" name="Set opacity" type="Flasj">
+                    <param id="0" name="Opacity">5</param>
+                </action>
+                <action id="-9" name="Destroy" type="Flasj" />
+                <action id="-3" name="Set position" type="BruxaComPrincipe">
+                    <param id="0" name="X">438</param>
+                    <param id="1" name="Y">312</param>
+                </action>
+                <action id="-3" name="Set position" type="BalaoGrito">
+                    <param id="0" name="X">BruxaComPrincipe.X</param>
+                    <param id="1" name="Y">BruxaComPrincipe.y</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.8</param>
+                </action>
+                <action id="-3" name="Set position" type="BruxaComPrincipe">
+                    <param id="0" name="X">506</param>
+                    <param id="1" name="Y">370</param>
+                </action>
+                <action id="-3" name="Set position" type="BalaoGrito">
+                    <param id="0" name="X">BruxaComPrincipe.X</param>
+                    <param id="1" name="Y">BruxaComPrincipe.y</param>
+                </action>
+                <action id="-3" name="Set position" type="Conversa">
+                    <param id="0" name="X">balaogrito.ImagePointX(1) - 65</param>
+                    <param id="1" name="Y">balaogrito.ImagePointY(1)- 30</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.8</param>
+                </action>
+                <action id="-3" name="Set position" type="BruxaComPrincipe">
+                    <param id="0" name="X">535</param>
+                    <param id="1" name="Y">392</param>
+                </action>
+                <action id="-9" name="Destroy" type="Conversa" />
+                <action id="-9" name="Destroy" type="BalaoGrito" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.8</param>
+                </action>
+                <action id="-9" name="Destroy" type="BruxaComPrincipe" />
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">BalaoGrito</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">120</param>
+                    <param id="3" name="Y">400</param>
+                </action>
+                <action id="-7" name="Set size" type="BalaoGrito">
+                    <param id="0" name="Width">275</param>
+                    <param id="1" name="Height">104</param>
+                </action>
+                <action disabled="1" id="7" name="Set mirrored" type="BalaoGrito">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Conversa</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">BalaoGrito.ImagePointX(1) - 55</param>
+                    <param id="3" name="Y">BalaoGrito.ImagePointY(1) - 28</param>
+                </action>
+                <action id="0" name="Set text" type="Conversa">
+                    <param id="0" name="Text">&quot;Prince, i will save you !&quot;</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Esconde</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">84.697</param>
+                    <param id="3" name="Y">381</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">PrincesaIndo</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">88.691</param>
+                    <param id="3" name="Y">391.867</param>
+                </action>
+                <action id="-9" name="Destroy" type="BalaoGrito" />
+                <action id="-9" name="Destroy" type="Conversa" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.4</param>
+                </action>
+                <action id="-3" name="Set position" type="PrincesaIndo">
+                    <param id="0" name="X">108</param>
+                    <param id="1" name="Y">401</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.4</param>
+                </action>
+                <action id="-3" name="Set position" type="PrincesaIndo">
+                    <param id="0" name="X">141</param>
+                    <param id="1" name="Y"> 433</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-3" name="Set position" type="PrincesaIndo">
+                    <param id="0" name="X">319</param>
+                    <param id="1" name="Y">478</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.4</param>
+                </action>
+                <action id="-3" name="Set position" type="PrincesaIndo">
+                    <param id="0" name="X">344</param>
+                    <param id="1" name="Y">487</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.4</param>
+                </action>
+                <action id="-3" name="Set position" type="PrincesaIndo">
+                    <param id="0" name="X">386</param>
+                    <param id="1" name="Y">475</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.4</param>
+                </action>
+                <action id="-3" name="Set position" type="PrincesaIndo">
+                    <param id="0" name="X">441</param>
+                    <param id="1" name="Y">472</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">Start</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Tutorial</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">400</param>
+                    <param id="3" name="Y">300</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="On any key pressed" type="Keyboard" />
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">Start</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set volume" type="Audio">
+                    <param id="0" name="Tag">&quot;INICIO&quot;</param>
+                    <param id="1" name="dB">-10</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" type="PressStart" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">Start</param>
+                    <param id="1" name="Value">6</param>
+                </action>
+                <action id="-2" name="Go to layout" type="System">
+                    <param id="0" name="Layout">Tela1</param>
+                </action>
+                <action id="3" name="Set volume" type="Audio">
+                    <param id="0" name="Tag">&quot;INICIO&quot;</param>
+                    <param id="1" name="dB">-10</param>
+                </action>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">Musica_Ambiente</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;MusicaAmbiente&quot;</param>
+                </action>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;INICIO&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Win</name>
+    <events>
+        <variable constant="0" name="Beijo" static="0" type="number">0</variable>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;BOSS&quot;</param>
+                </action>
+                <action id="-3" name="Set position" type="PrincesaWin">
+                    <param id="0" name="X">WX</param>
+                    <param id="1" name="Y">WY</param>
+                </action>
+                <action id="-3" name="Set position" type="ChefeLOSE">
+                    <param id="0" name="X">CX</param>
+                    <param id="1" name="Y">CY</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" type="Flasj">
+                    <param id="0" name="&apos;On&apos; time">0.3</param>
+                    <param id="1" name="&apos;Off&apos; time">0.2</param>
+                    <param id="2" name="Duration">2</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="4" name="Set animation" type="PrincesaWin">
+                    <param id="0" name="Animation">&quot;Feliz&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-9" name="Destroy" type="Flasj" />
+                <action behavior="Flash" id="1" name="Stop flashing" type="Flasj" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">chefeLose.X</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">PrincesaWin.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" type="PrincesaWin">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-2" name="Set Y" type="PrincesaWin">
+                    <param id="0" name="Y">ChefeLose.Y  + 38</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">chefeLose.X</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">PrincesaWin.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" type="PrincesaWin">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-2" name="Set Y" type="PrincesaWin">
+                    <param id="0" name="Y">ChefeLose.Y +38</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="-23" name="Move at angle" type="BruxaVolta">
+                    <param id="0" name="Angle">0</param>
+                    <param id="1" name="Distance">8</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="BruxaVolta">
+                    <param id="0" name="Object">Diminui</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="ChefeLOSE">
+                    <param id="0" name="Animation">&quot;Normal&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="3" name="Compare frame" type="ChefeLOSE">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">21</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">GameOver</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">400</param>
+                    <param id="3" name="Y">300</param>
+                </action>
+                <action id="-15" name="Set visible" type="GameOver">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" type="GameOver" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

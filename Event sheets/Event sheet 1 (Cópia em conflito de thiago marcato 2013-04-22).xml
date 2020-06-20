@@ -1,0 +1,1363 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Teste" static="0" type="number">0</variable>
+        <variable constant="0" name="AnimacaoFinal" static="0" type="number">0</variable>
+        <variable constant="0" name="TocaUma" static="0" type="number">0</variable>
+        <variable constant="0" name="CY" static="0" type="number">0</variable>
+        <variable constant="0" name="CX" static="0" type="number">0</variable>
+        <variable constant="0" name="direcaoF" static="0" type="number">180</variable>
+        <variable constant="0" name="direcao" static="0" type="number">0</variable>
+        <variable constant="0" name="OgroY" static="0" type="number">0</variable>
+        <variable constant="0" name="Ogrox" static="0" type="number">0</variable>
+        <variable constant="0" name="WY" static="0" type="number">0</variable>
+        <variable constant="0" name="WX" static="0" type="number">0</variable>
+        <variable constant="0" name="VidaChefe" static="0" type="number">0</variable>
+        <variable constant="0" name="VelocidadeBoss" static="0" type="number">5</variable>
+        <variable constant="0" name="hit" static="0" type="number">0</variable>
+        <variable constant="0" name="Direita" static="0" type="number">1</variable>
+        <variable constant="0" name="Esquerda" static="0" type="number">0</variable>
+        <variable constant="0" name="Lugar2" static="0" type="number">0</variable>
+        <variable constant="0" name="Lugar" static="0" type="number">0</variable>
+        <variable constant="0" name="LMY" static="0" type="number">0</variable>
+        <variable constant="0" name="LMX" static="0" type="number">0</variable>
+        <variable constant="0" name="Tela" static="0" type="number">13</variable>
+        <variable constant="0" name="TelaAtual" static="0" type="text"></variable>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;Porta&quot;</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="Animação">
+                    <param id="0" name="Pin to">invisivel</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="Platafoma">
+                    <param id="0" name="Pin to">Corrente</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="Platafoma2">
+                    <param id="0" name="Pin to">Corrente2</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="Platafoma3">
+                    <param id="0" name="Pin to">Corrente3</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="Platafoma4">
+                    <param id="0" name="Pin to">Corrente4</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action behavior="Platform" id="5" name="Set gravity" type="invisivel">
+                    <param id="0" name="Gravity">1500</param>
+                </action>
+                <action behavior="Platform" id="4" name="Set jump strength" type="invisivel">
+                    <param id="0" name="Jump strength">560</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="PontoG">
+                    <param id="0" name="Pin to">InimigoTerrestre</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="InimigoTerrestre2">
+                    <param id="0" name="Pin to">InimigoTerrestre</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="Morcego2">
+                    <param id="0" name="Pin to">Morcego</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="PontoG2">
+                    <param id="0" name="Pin to">Morcego</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-29" name="Set layout effect enabled" type="System">
+                    <param id="0" name="Mode">0</param>
+                    <param id="1" name="Effect">&quot;Pulse&quot;</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">VidaChefe</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="SigaSeuCoracao">
+                    <param id="0" name="Pin to">invisivel</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="4" name="Set animation" type="Animação">
+                    <param id="0" name="Animation">&quot;nervosa&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="0" name="Set ignoring input" type="invisivel">
+                    <param id="0" name="Input">1</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="-9" name="Destroy" type="SigaSeuCoracao" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">TelaAtual</param>
+                    <param id="1" name="Value">&quot;Tela&quot; &amp;  Tela</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action behavior="Sine" id="0" name="Set active" type="Corrente2">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition behavior="Platform" id="8" name="On moved" type="invisivel" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="Animação">
+                    <param id="0" name="Animation">&quot;Andando&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" type="invisivel" />
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">AnimacaoFinal</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="Animação">
+                    <param id="0" name="Animation">&quot;Parado&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition behavior="Platform" id="3" name="Is jumping" type="invisivel" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="Animação">
+                    <param id="0" name="Animation">&quot;Pulando&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition behavior="Platform" id="2" name="Is on floor" type="invisivel" />
+                <condition behavior="Platform" id="0" inverted="1" name="Is moving" type="invisivel" />
+                <condition disabled="1" id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">AnimacaoFinal</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="Animação">
+                    <param id="0" name="Animation">&quot;Parado&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" type="invisivel" />
+                <condition behavior="Platform" id="0" name="Is moving" type="invisivel" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="Animação">
+                    <param id="0" name="Animation">&quot;Andando&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="2" name="Key is down" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" type="Animação">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="2" name="Key is down" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" type="Animação">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="invisivel">
+                    <param id="0" name="Object">Porta</param>
+                </condition>
+                <condition id="2" name="Key is down" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">porta</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-25</param>
+                    <param id="1" name="Tag (optional)">&quot;Porta&quot;</param>
+                </action>
+                <action id="11" name="Set collisions enabled" type="invisivel">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="4" name="Set animation" type="Animação">
+                    <param id="0" name="Animation">&quot;PortaIn&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-3" name="Set position" type="invisivel">
+                    <param id="0" name="X">porta.ImagePointX(1)</param>
+                    <param id="1" name="Y">porta.ImagePointy(1) +10</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" type="invisivel">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-10" name="Add to" type="System">
+                    <param id="0" name="Variable">Tela</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">TelaAtual</param>
+                    <param id="1" name="Value">&quot;Tela&quot; &amp;  Tela</param>
+                </action>
+                <action id="4" name="Set animation" type="Porta">
+                    <param id="0" name="Animation">&quot;abrindo&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action id="-15" name="Set visible" type="Animação">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" type="System">
+                    <param id="0" name="Layout">TelaAtual</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="invisivel">
+                    <param id="0" name="Object">PortaX2</param>
+                </condition>
+                <condition id="2" name="Key is down" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">porta</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-25</param>
+                    <param id="1" name="Tag (optional)">&quot;Porta&quot;</param>
+                </action>
+                <action id="11" name="Set collisions enabled" type="invisivel">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="4" name="Set animation" type="Animação">
+                    <param id="0" name="Animation">&quot;PortaIn&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-3" name="Set position" type="invisivel">
+                    <param id="0" name="X">portaX2.ImagePointX(1)</param>
+                    <param id="1" name="Y">portaX2.ImagePointy(1) +10</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" type="invisivel">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-11" name="Subtract from" type="System">
+                    <param id="0" name="Variable">Tela</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">TelaAtual</param>
+                    <param id="1" name="Value">&quot;Tela&quot; &amp;  Tela</param>
+                </action>
+                <action id="4" name="Set animation" type="PortaX2">
+                    <param id="0" name="Animation">&quot;abrindo&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action id="-15" name="Set visible" type="Animação">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" type="System">
+                    <param id="0" name="Layout">TelaAtual</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="invisivel">
+                    <param id="0" name="Object">PortaX3</param>
+                </condition>
+                <condition id="2" name="Key is down" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">porta</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-25</param>
+                    <param id="1" name="Tag (optional)">&quot;Porta&quot;</param>
+                </action>
+                <action id="11" name="Set collisions enabled" type="invisivel">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="4" name="Set animation" type="Animação">
+                    <param id="0" name="Animation">&quot;PortaIn&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-3" name="Set position" type="invisivel">
+                    <param id="0" name="X">portaX3.ImagePointX(1)</param>
+                    <param id="1" name="Y">portaX3.ImagePointy(1) +10</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" type="invisivel">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-11" name="Subtract from" type="System">
+                    <param id="0" name="Variable">Tela</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">TelaAtual</param>
+                    <param id="1" name="Value">&quot;Tela&quot; &amp;  Tela</param>
+                </action>
+                <action id="4" name="Set animation" type="PortaX3">
+                    <param id="0" name="Animation">&quot;abrindo&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action id="-15" name="Set visible" type="Animação">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" type="System">
+                    <param id="0" name="Layout">TelaAtual</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-6" name="Every X seconds" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Flexa</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">CaveiraCuspé.ImagePointX(1)</param>
+                    <param id="3" name="Y">CaveiraCuspé.ImagePointY(1)</param>
+                </action>
+                <action id="0" name="Spawn another object" type="CaveiraCuspé">
+                    <param id="0" name="Object">Flexa</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="7" name="Set mirrored" type="Flexa">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-8" name="Set angle" type="Flexa">
+                    <param id="0" name="Angle">180</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-6" name="Every X seconds" type="System">
+                    <param id="0" name="Interval (seconds)">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Flexa</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">CaveiraCuspé2.ImagePointX(1)</param>
+                    <param id="3" name="Y">CaveiraCuspé2.ImagePointY(1)</param>
+                </action>
+                <action id="0" name="Spawn another object" type="CaveiraCuspé2">
+                    <param id="0" name="Object">Flexa</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="7" name="Set mirrored" type="Flexa">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="Flexa">
+                    <param id="0" name="Object">invisivel</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" type="System">
+                    <param id="0" name="Layout">Die</param>
+                </action>
+                <action id="-3" name="Set position" type="Morrida">
+                    <param id="0" name="X">invisivel.X</param>
+                    <param id="1" name="Y">invisivel.Y</param>
+                </action>
+                <action id="-9" name="Destroy" type="Flexa" />
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">LMX</param>
+                    <param id="1" name="Value">invisivel.X</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">LMY</param>
+                    <param id="1" name="Value">invisivel.Y</param>
+                </action>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;Ambiente&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="invisivel">
+                    <param id="0" name="Object">Fogo</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" type="System">
+                    <param id="0" name="Layout">Die</param>
+                </action>
+                <action id="-3" name="Set position" type="Morrida">
+                    <param id="0" name="X">invisivel.X</param>
+                    <param id="1" name="Y">invisivel.Y</param>
+                </action>
+                <action id="-9" name="Destroy" type="Flexa" />
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">LMX</param>
+                    <param id="1" name="Value">invisivel.X</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">LMY</param>
+                    <param id="1" name="Value">invisivel.Y</param>
+                </action>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;Ambiente&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">lugar</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">InimigoTerrestre.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" type="InimigoTerrestre2">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">lugar</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">InimigoTerrestre.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" type="InimigoTerrestre2">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">Lugar</param>
+                    <param id="1" name="Value">InimigoTerrestre.X</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">Lugar2</param>
+                    <param id="1" name="Value">Morcego.X</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="invisivel">
+                    <param id="0" name="Object">InimigoTerrestre</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" type="System">
+                    <param id="0" name="Layout">Die</param>
+                </action>
+                <action id="-3" name="Set position" type="Morrida">
+                    <param id="0" name="X">invisivel.X</param>
+                    <param id="1" name="Y">invisivel.Y</param>
+                </action>
+                <action id="-9" name="Destroy" type="Flexa" />
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">LMX</param>
+                    <param id="1" name="Value">invisivel.X</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">LMY</param>
+                    <param id="1" name="Value">invisivel.Y</param>
+                </action>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;Ambiente&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="invisivel">
+                    <param id="0" name="Object">PontoG</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" type="invisivel">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-9" name="Destroy" type="InimigoTerrestre" />
+                <action behavior="Sine" id="0" name="Set active" type="InimigoTerrestre">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="4" name="Set animation" type="InimigoTerrestre2">
+                    <param id="0" name="Animation">&quot;Die&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-26" name="Move to layer" type="InimigoTerrestre2">
+                    <param id="0" name="Layer">4</param>
+                </action>
+                <action behavior="Pin" id="1" name="Unpin" type="InimigoTerrestre2" />
+                <action id="-2" name="Set Y" type="InimigoTerrestre2">
+                    <param id="0" name="Y">inimigoTerrestre2.Y - 5</param>
+                </action>
+                <action behavior="Physics" id="6" name="Apply torque" type="InimigoTerrestre2">
+                    <param id="0" name="Torque">1</param>
+                </action>
+                <action behavior="Physics" id="5" name="Apply impulse at angle" type="InimigoTerrestre2">
+                    <param id="0" name="Impulse">1</param>
+                    <param id="1" name="Angle">3</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-9" name="Destroy" type="PontoG" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">lugar2</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">Morcego.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" type="Morcego2">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">lugar2</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">Morcego.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" type="Morcego2">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="invisivel">
+                    <param id="0" name="Object">Morcego</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" type="System">
+                    <param id="0" name="Layout">Die</param>
+                </action>
+                <action id="-3" name="Set position" type="Morrida">
+                    <param id="0" name="X">invisivel.X</param>
+                    <param id="1" name="Y">invisivel.Y</param>
+                </action>
+                <action id="-9" name="Destroy" type="Flexa" />
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">LMX</param>
+                    <param id="1" name="Value">invisivel.X</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">LMY</param>
+                    <param id="1" name="Value">invisivel.Y</param>
+                </action>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;Ambiente&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="invisivel">
+                    <param id="0" name="Object">PontoG2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="-2" name="Set Y" type="invisivel">
+                    <param id="0" name="Y">invisivel.Y - 12</param>
+                </action>
+                <action behavior="Platform" id="7" name="Simulate control" type="invisivel">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-9" name="Destroy" type="Morcego" />
+                <action behavior="Sine" id="0" name="Set active" type="Morcego">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="4" name="Set animation" type="Morcego2">
+                    <param id="0" name="Animation">&quot;Die&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-26" name="Move to layer" type="Morcego2">
+                    <param id="0" name="Layer">4</param>
+                </action>
+                <action behavior="Pin" id="1" name="Unpin" type="Morcego2" />
+                <action behavior="Physics" id="6" name="Apply torque" type="Morcego2">
+                    <param id="0" name="Torque">1</param>
+                </action>
+                <action behavior="Physics" id="5" name="Apply impulse at angle" type="Morcego2">
+                    <param id="0" name="Impulse">1</param>
+                    <param id="1" name="Angle">3</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-9" name="Destroy" type="PontoG2" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">VidaChefe</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;Ambiente&quot;</param>
+                </action>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">mortebooss</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-30</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">CY</param>
+                    <param id="1" name="Value">chefe.Y</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">CX</param>
+                    <param id="1" name="Value">chefe.X</param>
+                </action>
+                <action id="-9" name="Destroy" type="Chefe" />
+                <action id="-2" name="Go to layout" type="System">
+                    <param id="0" name="Layout">Win</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" type="invisivel">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">creditos_finais</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">WX</param>
+                    <param id="1" name="Value">invisivel.X</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">WY</param>
+                    <param id="1" name="Value">invisivel.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="invisivel">
+                    <param id="0" name="Object">Porta</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">batida_do_coraçao_4_2</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">40</param>
+                    <param id="1" name="Tag (optional)">&quot;Coracao&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" inverted="1" name="Is overlapping another object" type="invisivel">
+                    <param id="0" name="Object">Porta</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;Coracao&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-25" name="On loading finished" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">invisivel.X</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">CaveiraQ.ImagePointX(1)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="CaveiraQ">
+                    <param id="0" name="Animation">&quot;Esquerda&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">invisivel.X</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">CaveiraQ.ImagePointX(2)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="CaveiraQ">
+                    <param id="0" name="Animation">&quot;Direita&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">invisivel.X</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">CaveiraQ.ImagePointX(1)</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">invisivel.X</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">caveiraq.ImagePointX(2)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="CaveiraQ">
+                    <param id="0" name="Animation">&quot;Central&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="Flexa">
+                    <param id="0" name="Object">Sprite6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" type="Flexa" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="invisivel">
+                    <param id="0" name="Object">Sprite4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" type="System">
+                    <param id="0" name="Layout">Die</param>
+                </action>
+                <action id="-3" name="Set position" type="Morrida">
+                    <param id="0" name="X">invisivel.X</param>
+                    <param id="1" name="Y">invisivel.Y</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">LMX</param>
+                    <param id="1" name="Value">invisivel.X</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">LMY</param>
+                    <param id="1" name="Value">invisivel.Y</param>
+                </action>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;Ambiente&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" type="invisivel" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">Pulo2</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-20</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-6" name="Every X seconds" type="System">
+                    <param id="0" name="Interval (seconds)">02</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" type="Chefe">
+                    <param id="0" name="Instance variable">agorapode</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" type="BooDie">
+                    <param id="0" name="Pin to">Chefe</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Physics" id="4" name="Apply impulse towards position" type="Chefe">
+                    <param id="0" name="Impulse"> chefe.Physics.VelocityX -50</param>
+                    <param id="1" name="X">direcao</param>
+                    <param id="2" name="Y">chefe.Y</param>
+                    <param id="3" name="Image point">0</param>
+                </action>
+                <action id="4" name="Set animation" type="Chefe">
+                    <param id="0" name="Animation">&quot;Movimento&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-9" name="Destroy" type="BossHit" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">chefe.X</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">invisivel.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" type="Chefe">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">direcao</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">chefe.X</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">invisivel.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" type="Chefe">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">direcao</param>
+                    <param id="1" name="Value">800</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-25" name="On loading finished" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" type="BooDie">
+                    <param id="0" name="Pin to">Chefe</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="Chefe">
+                    <param id="0" name="Object">Parede</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">bossHit.Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Flash</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="X">chefe.X - (60 * direcaof)</param>
+                    <param id="3" name="Y">chefe.Y + 30</param>
+                </action>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">porradanaparede</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-13" name="Set boolean" type="Chefe">
+                    <param id="0" name="Instance variable">agorapode</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="4" name="Set animation" type="Chefe">
+                    <param id="0" name="Animation">&quot;Tonto&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="0" name="Set ignoring input" type="invisivel">
+                    <param id="0" name="Input">1</param>
+                </action>
+                <action id="-29" name="Set layout effect enabled" type="System">
+                    <param id="0" name="Mode">1</param>
+                    <param id="1" name="Effect">&quot;Pulse&quot;</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">BossHit</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="X">Chefe.ImagePointX(1) -(10 * direcaof)</param>
+                    <param id="3" name="Y">Chefe.ImagePointy(1)</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="BossHit">
+                    <param id="0" name="Pin to">Chefe</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.6</param>
+                </action>
+                <action id="-29" name="Set layout effect enabled" type="System">
+                    <param id="0" name="Mode">0</param>
+                    <param id="1" name="Effect">&quot;Pulse&quot;</param>
+                </action>
+                <action behavior="Platform" id="0" name="Set ignoring input" type="invisivel">
+                    <param id="0" name="Input">0</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">3.5</param>
+                </action>
+                <action id="4" name="Set animation" type="Chefe">
+                    <param id="0" name="Animation">&quot;Movimento&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-13" name="Set boolean" type="Chefe">
+                    <param id="0" name="Instance variable">agorapode</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="invisivel">
+                    <param id="0" name="Object">BossHit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" type="invisivel">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action id="-23" name="Move at angle" type="invisivel">
+                    <param id="0" name="Angle">45</param>
+                    <param id="1" name="Distance">20</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" type="Chefe">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-10" name="Add to" type="System">
+                    <param id="0" name="Variable">VidaChefe</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">pulo</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="invisivel">
+                    <param id="0" name="Object">PuloHit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-23" name="Move at angle" type="invisivel">
+                    <param id="0" name="Angle">180</param>
+                    <param id="1" name="Distance">- 5 * direcaof</param>
+                </action>
+                <action id="-9" name="Destroy" type="BossHit" />
+                <action id="4" name="Set animation" type="Chefe">
+                    <param id="0" name="Animation">&quot;Movimento&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">chefe.ImagePointX(0)</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">300</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">direcaoF</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">chefe.ImagePointX(0)</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">300</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">direcaoF</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="invisivel">
+                    <param id="0" name="Object">BooDie</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" type="System">
+                    <param id="0" name="Layout">Die</param>
+                </action>
+                <action id="-3" name="Set position" type="Morrida">
+                    <param id="0" name="X">invisivel.X</param>
+                    <param id="1" name="Y">invisivel.Y</param>
+                </action>
+                <action id="-9" name="Destroy" type="Flexa" />
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">LMX</param>
+                    <param id="1" name="Value">invisivel.X</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">LMY</param>
+                    <param id="1" name="Value">invisivel.Y</param>
+                </action>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;MusicaAmbiente&quot;</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">AnimacaoFinal</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">TocaUma</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="3" name="Compare frame" type="Chefe">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">11</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-14" name="Toggle boolean" type="Chefe">
+                    <param id="0" name="Instance variable">agorapode</param>
+                </action>
+                <action id="4" name="Set animation" type="Chefe">
+                    <param id="0" name="Animation">&quot;Movimento&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" type="invisivel">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" type="Particles">
+                    <param id="0" name="Pin to">BruxaBoss</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-23" name="Move at angle" type="BruxaBoss">
+                    <param id="0" name="Angle">180</param>
+                    <param id="1" name="Distance">7</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1">
+            <conditions>
+                <condition id="-4" name="Is outside layout" type="BruxaBoss" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" type="BruxaBoss" />
+                <action id="-9" name="Destroy" type="Particles" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">sigaseucoracao.Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="0" name="Set ignoring input" type="invisivel">
+                    <param id="0" name="Input">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1">
+            <conditions>
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">Tela</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">14</param>
+                </condition>
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">TocaUma</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">TocaUma</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">AnimacaoFinal</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;MusicaAmbiente&quot;</param>
+                </action>
+                <action disabled="1" id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;BOSS&quot;</param>
+                </action>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">BOSS</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;BOSS&quot;</param>
+                </action>
+                <action disabled="1" id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">Tela</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">14</param>
+                </condition>
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">AnimacaoFinal</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="11" name="Set enabled" type="invisivel">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">AnimacaoFinal</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" type="Relanpago" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="4" name="Set animation" type="Animação">
+                    <param id="0" name="Animation">&quot;feliz&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">BalãoNormal</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="X">INVISIVEL.X + 48</param>
+                    <param id="3" name="Y">INVISIVEL.Y - 35</param>
+                </action>
+                <action id="-7" name="Set size" type="BalãoNormal">
+                    <param id="0" name="Width">132</param>
+                    <param id="1" name="Height">71</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Conversa</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="X">BalãoNormal.X - 110</param>
+                    <param id="3" name="Y">BalãoNormal.Y  - 75</param>
+                </action>
+                <action id="0" name="Set text" type="Conversa">
+                    <param id="0" name="Text">&quot;PRINCE !&quot;</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="4" name="Set animation" type="Animação">
+                    <param id="0" name="Animation">&quot;susto&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">BruxaBoss</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="X">763</param>
+                    <param id="3" name="Y">265</param>
+                </action>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">bruxa</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-15</param>
+                    <param id="1" name="Tag (optional)">&quot;risada&quot;</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">Particles</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="X">777</param>
+                    <param id="3" name="Y">291</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" type="Chefe">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">4</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-9" name="Destroy" type="BalãoNormal" />
+                <action id="-9" name="Destroy" type="Conversa" />
+                <action id="4" name="Set animation" type="Chefe">
+                    <param id="0" name="Animation">&quot;Transform&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">Tela</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">14</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;MusicaAmbiente&quot;</param>
+                </action>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">BOSS</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;BOSS&quot;</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">TocaUma</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">AnimacaoFinal</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
